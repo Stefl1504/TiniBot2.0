@@ -105,6 +105,9 @@ object Webstream{
       case EndStreamCommand(args) =>
         api ! SendMessage(message.createReply(endStream()))
         Actor.same
+      case HostCommane(args) =>
+        //irc ! sendHost(message.content())
+        Actor.same
       case _ =>
         Actor.same
     }
